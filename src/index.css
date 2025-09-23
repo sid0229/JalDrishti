@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enhanced animations and transitions */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 194, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(0, 255, 194, 0.8), 0 0 30px rgba(0, 255, 194, 0.6); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.glow-effect {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.float-effect {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Enhanced focus styles */
+*:focus {
+  outline: 2px solid #2ca58d;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(44, 165, 141, 0.1);
+}
+
+/* Glassmorphism effects */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Writing mode for vertical text */
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Accessibility Styles */
+.high-contrast {
+  filter: contrast(150%);
+}
+
+.high-contrast * {
+  border-color: #000 !important;
+}
+
+.dyslexic-font {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', cursive, sans-serif;
+}
+
+.reduced-motion * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2ca58d;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #014d86;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  * {
+    color: black !important;
+    background: white !important;
+  }
+}
